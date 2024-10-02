@@ -1,5 +1,5 @@
-import 'package:chopper_network/presentation/app.dart';
-import 'package:chopper_network/presentation/counter/counter.dart';
+import 'package:chopper_network/features/app/presentation/app.dart';
+import 'package:chopper_network/features/app/presentation/counter/counter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

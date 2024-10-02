@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:chopper_network/core/di/inject.dart';
 import 'package:flutter/widgets.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -28,7 +29,12 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   Bloc.observer = const AppBlocObserver();
 
   await runZonedGuarded(
-    () async => runApp(await builder()),
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      configureDependencies();
+
+      runApp(await builder());
+    },
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
 }

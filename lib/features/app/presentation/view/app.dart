@@ -1,4 +1,4 @@
-import 'package:chopper_network/presentation/counter/counter.dart';
+import 'package:chopper_network/features/app/presentation/counter/counter.dart';
 import 'package:chopper_network/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
