@@ -1,5 +1,5 @@
-class Character {
-  Character({
+class CharacterEntity {
+  CharacterEntity({
     required this.name,
     required this.imageUrl,
     required this.role,
