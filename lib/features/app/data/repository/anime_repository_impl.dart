@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 
@@ -5,34 +6,46 @@ import 'package:chopper_network/core/error/failure.dart';
 import 'package:chopper_network/features/app/data/model/anime_response_model.dart';
 import 'package:chopper_network/features/app/data/model/character_response_model.dart';
 import 'package:chopper_network/features/app/data/service/anime_service.dart';
-import 'package:chopper_network/features/app/domain/entity/character_entity.dart';
 import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
+import 'package:chopper_network/features/app/domain/entity/character_entity.dart';
 import 'package:chopper_network/features/app/domain/repository/anime_repository.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: AnimeRepository)
 @lazySingleton
 class AnimeRepositoryImpl implements AnimeRepository {
   AnimeRepositoryImpl(AnimeService animeService) : _animeService = animeService;
-  final AnimeService _animeService;
 
+  final AnimeService _animeService;
+  static const platform = MethodChannel('com.example.app/anime');
   @override
   Future<Either<Failure, List<CharacterEntity>>> getCharacters({
     required int id,
   }) async {
     try {
+      // Invoke the native method and wait for the result
+      final result = await platform.invokeMethod('checkDeviceInfos')
+          as Map<Object?, Object?>;
+
+      if (result['networkStatus'] == null) {
+        return const Left(ServerFailure('Error when getting network status'));
+      }
+      // Check network status
+      final networkStatus = result['networkStatus']! as bool;
+      if (!networkStatus) {
+        return const Left(ServerFailure('No internet connection'));
+      }
+
+      // Proceed with the API call if network is available
       final response = await _animeService.getCharacters(id: id);
 
       if (response.isSuccessful) {
-        // Parse the response body and cast to Map<String, dynamic>
         final jsonBody =
             json.decode(response.bodyString) as Map<String, dynamic>;
-
-        // Extract the 'data' list from the JSON
         final charactersData = jsonBody['data'] as List<dynamic>;
 
-        // Convert each item in the list to a CharacterModel, then to a CharacterEntity
         final characters = charactersData.map((characterData) {
           final characterModel = CharacterResponseModel.fromJson(
             characterData as Map<String, dynamic>,
@@ -46,11 +59,16 @@ class AnimeRepositoryImpl implements AnimeRepository {
 
         return Right(characters);
       } else {
-        return const Left(ServerFailure("getCharacters request error"));
+        return const Left(ServerFailure('getCharacters request error'));
       }
+    } on PlatformException catch (e) {
+      log('PlatformException: ${e.message}');
+      return Left(
+        ServerFailure('Failed to invoke native method: ${e.message}'),
+      );
     } catch (e, st) {
-      log(e.toString());
-      log(st.toString());
+      log('Error: $e');
+      log('Stack trace: $st');
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -60,10 +78,23 @@ class AnimeRepositoryImpl implements AnimeRepository {
     required int page,
   }) async {
     try {
+      // Invoke the native method and wait for the result
+      final result = await platform.invokeMethod('checkDeviceInfos')
+          as Map<Object?, Object?>;
+
+      if (result['networkStatus'] == null) {
+        return const Left(ServerFailure('Error when getting network status'));
+      }
+      // Check network status
+      final networkStatus = result['networkStatus']! as bool;
+      if (!networkStatus) {
+        return const Left(ServerFailure('No internet connection'));
+      }
+
+      // Proceed with the API call if network is available
       final response = await _animeService.getTopAnime(page: page);
 
       if (response.isSuccessful) {
-        // Parse the response body and cast to Map<String, dynamic>
         final jsonBody =
             json.decode(response.bodyString) as Map<String, dynamic>;
 
@@ -93,11 +124,16 @@ class AnimeRepositoryImpl implements AnimeRepository {
 
         return Right(animePaginationEntity);
       } else {
-        return const Left(ServerFailure("getTopAnime request error"));
+        return const Left(ServerFailure('getTopAnime request error'));
       }
+    } on PlatformException catch (e) {
+      log('PlatformException: ${e.message}');
+      return Left(
+        ServerFailure('Failed to invoke native method: ${e.message}'),
+      );
     } catch (e, st) {
-      log(e.toString());
-      log(st.toString());
+      log('Error: $e');
+      log('Stack trace: $st');
       return Left(ServerFailure(e.toString()));
     }
   }
