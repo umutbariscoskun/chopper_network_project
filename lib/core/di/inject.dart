@@ -1,5 +1,7 @@
+import 'package:chopper/chopper.dart';
 import 'package:chopper_network/core/config/flavor_config.dart';
 import 'package:chopper_network/core/di/inject.config.dart';
+import 'package:chopper_network/features/app/data/service/anime_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,5 +14,15 @@ void configureDependencies() {
 
 @module
 abstract class RegisterModule {
-  // init dio client as module
+  @singleton
+  ChopperClient get chopperClient => ChopperClient(
+        baseUrl: Uri.parse('https://api.jikan.moe/v4'),
+        interceptors: [
+          HttpLoggingInterceptor(),
+        ],
+        converter: const JsonConverter(),
+      );
+
+  @singleton
+  AnimeService get animeService => AnimeService.create(chopperClient);
 }
