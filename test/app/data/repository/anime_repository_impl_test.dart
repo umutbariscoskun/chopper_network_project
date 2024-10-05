@@ -1,12 +1,7 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:chopper/chopper.dart';
 import 'package:chopper_network/core/error/failure.dart';
 import 'package:chopper_network/features/app/data/repository/anime_repository_impl.dart';
 import 'package:chopper_network/features/app/data/service/anime_service.dart';
-import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
-import 'package:chopper_network/features/app/domain/entity/character_entity.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mock_web_server/mock_web_server.dart';
@@ -54,7 +49,8 @@ void main() {
 
     expect(result.isLeft(), true);
     result.fold(
-      (failure) => expect(failure, ServerFailure('No internet connection')),
+      (failure) =>
+          expect(failure, const ServerFailure('No internet connection')),
       (_) => fail('Test should return left with ServerFailure'),
     );
   });

@@ -1,10 +1,6 @@
-import 'dart:math';
-
-import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
 import 'package:chopper_network/features/app/domain/entity/character_entity.dart';
 import 'package:chopper_network/features/app/domain/repository/anime_repository.dart';
 import 'package:chopper_network/features/app/domain/use_case/get_characters_use_case.dart';
-import 'package:chopper_network/features/app/domain/use_case/get_top_anime_use_case.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -42,7 +38,6 @@ void main() {
         ..fold((l) => null, (r) {
           expect(r, [entity]);
         });
-      //check response
     },
   );
 }

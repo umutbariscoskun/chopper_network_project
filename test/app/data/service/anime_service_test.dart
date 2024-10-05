@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:chopper/chopper.dart';
-import 'package:chopper_network/core/error/failure.dart';
 import 'package:chopper_network/features/app/data/model/anime_response_model.dart';
 import 'package:chopper_network/features/app/data/model/character_response_model.dart';
 import 'package:chopper_network/features/app/data/service/anime_service.dart';
@@ -39,10 +38,9 @@ void main() {
   });
 
   group('AnimeService', () {
-    int page = 1;
+    const page = 1;
 
     test('should return AnimeResponse when the response code is 200', () async {
-      // Ensure the JSON is properly formatted
       final jsonData = json.decode(jsonAnimeRawData);
       mockWebServer.enqueue(
         body: json.encode(jsonData),
@@ -68,7 +66,6 @@ void main() {
 
     test('should return CharacterResponse when the response code is 200',
         () async {
-      // Ensure the JSON is properly formatted
       final jsonData = json.decode(jsonCharacterRawData);
       mockWebServer.enqueue(
         body: json.encode(jsonData),
@@ -94,7 +91,7 @@ void main() {
         expect(characterResponses, isA<List<CharacterResponseModel>>());
         expect(characterResponses.isNotEmpty, true);
 
-        // Check the first character
+        // Check  first character
         final firstCharacter = characterResponses[0];
         expect(firstCharacter.name, isNotNull);
         expect(firstCharacter.name, 'Fern');
@@ -113,7 +110,6 @@ void main() {
 
       expect(response.isSuccessful, false);
       expect(response.statusCode, 500);
-      // You might want to check for a specific error or failure type here
     });
   });
 }

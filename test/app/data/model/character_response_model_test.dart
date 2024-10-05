@@ -5,9 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../../helper/test_helper.dart'; // Assume this exists to read JSON files
 
 void main() {
-  const characterResponseDummyDataPath =
-      'helper/dummy_data/character_response_dummy.json';
-
   group('CharacterResponseModel Tests', () {
     test('should create a CharacterResponseModel instance', () {
       final model = CharacterResponseModel(
@@ -35,30 +32,36 @@ void main() {
       expect(
         characterList.length,
         equals(3),
-      ); // Assuming there are 3 characters in the dummy data
+      );
 
       // Test the first character
       expect(characterList[0].name, equals('Fern'));
       expect(
-          characterList[0].imageUrl,
-          equals(
-              'https://cdn.myanimelist.net/images/characters/13/519083.jpg?s=b280b410b588ebcd3fd30ac6fad02978'));
+        characterList[0].imageUrl,
+        equals(
+          'https://cdn.myanimelist.net/images/characters/13/519083.jpg?s=b280b410b588ebcd3fd30ac6fad02978',
+        ),
+      );
       expect(characterList[0].role, equals('Main'));
 
       // Test the second character
       expect(characterList[1].name, equals('Frieren'));
       expect(
-          characterList[1].imageUrl,
-          equals(
-              'https://cdn.myanimelist.net/images/characters/7/525105.jpg?s=1706604ec2ca141a172526b8dedf3177'));
+        characterList[1].imageUrl,
+        equals(
+          'https://cdn.myanimelist.net/images/characters/7/525105.jpg?s=1706604ec2ca141a172526b8dedf3177',
+        ),
+      );
       expect(characterList[1].role, equals('Main'));
 
       // Test the third character
       expect(characterList[2].name, equals('Stark'));
       expect(
-          characterList[2].imageUrl,
-          equals(
-              'https://cdn.myanimelist.net/images/characters/2/523292.jpg?s=ea781ce6864ae29a56f5ce3d223d9496'));
+        characterList[2].imageUrl,
+        equals(
+          'https://cdn.myanimelist.net/images/characters/2/523292.jpg?s=ea781ce6864ae29a56f5ce3d223d9496',
+        ),
+      );
       expect(characterList[2].role, equals('Main'));
     });
 
@@ -66,9 +69,7 @@ void main() {
       final invalidJson = {
         'character': {
           'name': 'Invalid Character',
-          'images': {
-            'jpg': {} // Missing 'image_url'
-          }
+          'images': {'jpg': {}}
         },
         'role': 'Unknown'
       };
@@ -112,7 +113,7 @@ void main() {
         () => CharacterResponseModel.fromJson(jsonWithNulls),
         throwsA(
           isA<TypeError>(),
-        ), // Or handle nulls if the model is updated to support them
+        ),
       );
     });
   });
