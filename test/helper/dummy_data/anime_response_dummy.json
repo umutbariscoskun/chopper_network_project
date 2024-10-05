@@ -1,0 +1,214 @@
+{
+    "pagination": {
+        "last_visible_page": 3,
+        "has_next_page": true,
+        "current_page": 1,
+        "items": {
+            "count": 5,
+            "total": 15,
+            "per_page": 5
+        }
+    },
+    "data": [
+        {
+            "mal_id": 52991,
+            "url": "https://myanimelist.net/anime/52991/Sousou_no_Frieren",
+            "images": {
+                "jpg": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1"
+                },
+                "webp": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/1"
+                }
+            },
+            "trailer": {
+                "youtube_id": "ZEkwCGJ3o7M",
+                "url": "https://www.youtube.com/watch?v=ZEkwCGJ3o7M",
+                "embed_url": "https://www.youtube.com/embed/ZEkwCGJ3o7M?enablejsapi=1&wmode=opaque&autoplay=1"
+            },
+            "title": "Sousou no Frieren",
+            "title_english": "Frieren: Beyond Journey's End",
+            "title_japanese": "葬送のフリーレン",
+            "type": "TV",
+            "source": "Manga",
+            "episodes": 28,
+            "status": "Finished Airing",
+            "airing": false,
+            "duration": "24 min per ep",
+            "rating": "PG-13 - Teens 13 or older",
+            "score": 9.33,
+            "scored_by": 512811,
+            "rank": 1,
+            "popularity": 197,
+            "members": 906397,
+            "favorites": 53440,
+            "synopsis": "During their decade-long quest to defeat the Demon King, the members of the hero's party forge bonds through adventures and battles...",
+            "season": "fall",
+            "year": 2023
+        },
+        {
+            "mal_id": 5114,
+            "url": "https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood",
+            "images": {
+                "jpg": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2"
+                },
+                "webp": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/2"
+                }
+            },
+            "trailer": {
+                "youtube_id": "--IcmZkvL0Q",
+                "url": "https://www.youtube.com/watch?v=--IcmZkvL0Q",
+                "embed_url": "https://www.youtube.com/embed/--IcmZkvL0Q?enablejsapi=1&wmode=opaque&autoplay=1"
+            },
+            "title": "Fullmetal Alchemist: Brotherhood",
+            "title_english": "Fullmetal Alchemist: Brotherhood",
+            "title_japanese": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+            "type": "TV",
+            "source": "Manga",
+            "episodes": 64,
+            "status": "Finished Airing",
+            "airing": false,
+            "duration": "24 min per ep",
+            "rating": "R - 17+ (violence & profanity)",
+            "score": 9.09,
+            "scored_by": 2160123,
+            "rank": 2,
+            "popularity": 3,
+            "members": 3420497,
+            "favorites": 228546,
+            "synopsis": "After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality...",
+            "season": "spring",
+            "year": 2009
+        },
+        {
+            "mal_id": 9253,
+            "url": "https://myanimelist.net/anime/9253/Steins_Gate",
+            "images": {
+                "jpg": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3"
+                },
+                "webp": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/3"
+                }
+            },
+            "trailer": {
+                "youtube_id": "27OZc-ku6is",
+                "url": "https://www.youtube.com/watch?v=27OZc-ku6is",
+                "embed_url": "https://www.youtube.com/embed/27OZc-ku6is?enablejsapi=1&wmode=opaque&autoplay=1"
+            },
+            "title": "Steins;Gate",
+            "title_english": "Steins;Gate",
+            "title_japanese": "STEINS;GATE",
+            "type": "TV",
+            "source": "Visual novel",
+            "episodes": 24,
+            "status": "Finished Airing",
+            "airing": false,
+            "duration": "24 min per ep",
+            "rating": "PG-13 - Teens 13 or older",
+            "score": 9.07,
+            "scored_by": 1425975,
+            "rank": 3,
+            "popularity": 14,
+            "members": 2621027,
+            "favorites": 191506,
+            "synopsis": "Eccentric scientist Rintarou Okabe has a never-ending thirst for scientific exploration. Together with his ditzy but well-meaning friend Mayuri Shiina...",
+            "season": "spring",
+            "year": 2011
+        },
+        {
+            "mal_id": 28977,
+            "url": "https://myanimelist.net/anime/28977/Gintama°",
+            "images": {
+                "jpg": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4"
+                },
+                "webp": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/4"
+                }
+            },
+            "trailer": {
+                "youtube_id": "YQC3ot0IjiA",
+                "url": "https://www.youtube.com/watch?v=YQC3ot0IjiA",
+                "embed_url": "https://www.youtube.com/embed/YQC3ot0IjiA?enablejsapi=1&wmode=opaque&autoplay=1"
+            },
+            "title": "Gintama°",
+            "title_english": "Gintama Season 4",
+            "title_japanese": "銀魂°",
+            "type": "TV",
+            "source": "Manga",
+            "episodes": 51,
+            "status": "Finished Airing",
+            "airing": false,
+            "duration": "24 min per ep",
+            "rating": "PG-13 - Teens 13 or older",
+            "score": 9.05,
+            "scored_by": 356118,
+            "rank": 4,
+            "popularity": 362,
+            "members": 664789,
+            "favorites": 16176,
+            "synopsis": "Gintoki, Shinpachi, and Kagura return as the fun-loving but broke members of the Yorozuya team! Living in an alternate-reality Edo...",
+            "season": "spring",
+            "year": 2015
+        },
+        {
+            "mal_id": 41467,
+            "url": "https://myanimelist.net/anime/41467/Bleach__Sennen_Kessen-hen",
+            "images": {
+                "jpg": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5"
+                },
+                "webp": {
+                    "image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5",
+                    "small_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5",
+                    "large_image_url": "https://teamdefinex-mobile-auth-casestudy.vercel.app/image/5"
+                }
+            },
+            "trailer": {
+                "youtube_id": "78WIYzX_m98",
+                "url": "https://www.youtube.com/watch?v=78WIYzX_m98",
+                "embed_url": "https://www.youtube.com/embed/78WIYzX_m98?enablejsapi=1&wmode=opaque&autoplay=1"
+            },
+            "title": "Bleach: Sennen Kessen-hen",
+            "title_english": "Bleach: Thousand-Year Blood War",
+            "title_japanese": "BLEACH 千年血戦篇",
+            "type": "TV",
+            "source": "Manga",
+            "episodes": 13,
+            "status": "Finished Airing",
+            "airing": false,
+            "duration": "24 min per ep",
+            "rating": "R - 17+ (violence & profanity)",
+            "score": 9.05,
+            "scored_by": 404100,
+            "rank": 5,
+            "popularity": 521,
+            "members": 701791,
+            "favorites": 28440,
+            "synopsis": "Substitute Soul Reaper Ichigo Kurosaki spends his days fighting against Hollows, dangerous evil spirits that threaten Karakura Town...",
+            "season": "fall",
+            "year": 2022
+        }
+    ]
+}

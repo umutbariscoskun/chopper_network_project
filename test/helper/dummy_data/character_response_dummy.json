@@ -1,0 +1,140 @@
+[
+    {
+        "character": {
+            "mal_id": 188176,
+            "url": "https://myanimelist.net/character/188176/Fern",
+            "images": {
+                "jpg": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/13/519083.jpg?s=b280b410b588ebcd3fd30ac6fad02978"
+                },
+                "webp": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/13/519083.webp?s=b280b410b588ebcd3fd30ac6fad02978",
+                    "small_image_url": "https://cdn.myanimelist.net/images/characters/13/519083t.webp?s=b280b410b588ebcd3fd30ac6fad02978"
+                }
+            },
+            "name": "Fern"
+        },
+        "role": "Main",
+        "favorites": 3444,
+        "voice_actors": [
+            {
+                "person": {
+                    "mal_id": 47097,
+                    "url": "https://myanimelist.net/people/47097/Kana_Ichinose",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/3/70398.jpg?s=01ab90c96ed2a89ebc025b02d8c38893"
+                        }
+                    },
+                    "name": "Ichinose, Kana"
+                },
+                "language": "Japanese"
+            },
+            {
+                "person": {
+                    "mal_id": 41966,
+                    "url": "https://myanimelist.net/people/41966/Jill_Harris",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/2/43821.jpg?s=8610b4cfc43832af5a4693ba65aea62d"
+                        }
+                    },
+                    "name": "Harris, Jill"
+                },
+                "language": "English"
+            }
+        ]
+    },
+    {
+        "character": {
+            "mal_id": 184947,
+            "url": "https://myanimelist.net/character/184947/Frieren",
+            "images": {
+                "jpg": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/7/525105.jpg?s=1706604ec2ca141a172526b8dedf3177"
+                },
+                "webp": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/7/525105.webp?s=1706604ec2ca141a172526b8dedf3177",
+                    "small_image_url": "https://cdn.myanimelist.net/images/characters/7/525105t.webp?s=1706604ec2ca141a172526b8dedf3177"
+                }
+            },
+            "name": "Frieren"
+        },
+        "role": "Main",
+        "favorites": 19826,
+        "voice_actors": [
+            {
+                "person": {
+                    "mal_id": 17215,
+                    "url": "https://myanimelist.net/people/17215/Atsumi_Tanezaki",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/3/77190.jpg?s=ed33c5d429051864f3af3fe2e64eb970"
+                        }
+                    },
+                    "name": "Tanezaki, Atsumi"
+                },
+                "language": "Japanese"
+            },
+            {
+                "person": {
+                    "mal_id": 35117,
+                    "url": "https://myanimelist.net/people/35117/Mallorie_Rodak",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/2/40976.jpg?s=5a1f44329cebb84e57d015299e4c7f6c"
+                        }
+                    },
+                    "name": "Rodak, Mallorie"
+                },
+                "language": "English"
+            }
+        ]
+    },
+    {
+        "character": {
+            "mal_id": 188177,
+            "url": "https://myanimelist.net/character/188177/Stark",
+            "images": {
+                "jpg": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/2/523292.jpg?s=ea781ce6864ae29a56f5ce3d223d9496"
+                },
+                "webp": {
+                    "image_url": "https://cdn.myanimelist.net/images/characters/2/523292.webp?s=ea781ce6864ae29a56f5ce3d223d9496",
+                    "small_image_url": "https://cdn.myanimelist.net/images/characters/2/523292t.webp?s=ea781ce6864ae29a56f5ce3d223d9496"
+                }
+            },
+            "name": "Stark"
+        },
+        "role": "Main",
+        "favorites": 1819,
+        "voice_actors": [
+            {
+                "person": {
+                    "mal_id": 47439,
+                    "url": "https://myanimelist.net/people/47439/Chiaki_Kobayashi",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/2/66505.jpg?s=b8e3db933b88d9d18dd0646526d46973"
+                        }
+                    },
+                    "name": "Kobayashi, Chiaki"
+                },
+                "language": "Japanese"
+            },
+            {
+                "person": {
+                    "mal_id": 47046,
+                    "url": "https://myanimelist.net/people/47046/Jordan_Dash_Cruz",
+                    "images": {
+                        "jpg": {
+                            "image_url": "https://cdn.myanimelist.net/images/voiceactors/1/50962.jpg?s=87cea43b9567d828fdfdb015a85c7b5d"
+                        }
+                    },
+                    "name": "Cruz, Jordan Dash"
+                },
+                "language": "English"
+            }
+        ]
+    }
+]

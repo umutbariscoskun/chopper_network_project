@@ -1,0 +1,61 @@
+import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
+import 'package:chopper_network/features/app/domain/repository/anime_repository.dart';
+import 'package:chopper_network/features/app/domain/use_case/get_top_anime_use_case.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+
+import 'use_case_mock_gen_test.mocks.dart';
+
+void main() {
+  GetTopAnimeUseCase? usecase;
+  AnimeRepository? mockRepo;
+  AnimeEntity? entity;
+  AnimePaginationEntity? animePaginationEntity;
+  PaginationEntity? paginationEntity;
+
+  setUp(() {
+    mockRepo = FakeRepo();
+    usecase = GetTopAnimeUseCase(mockRepo!);
+
+    entity = AnimeEntity(
+      imageUrl: 'test.jpg',
+      title: 'title',
+      score: 4,
+    );
+    paginationEntity = PaginationEntity(
+      lastVisiblePage: 10,
+      hasNextPage: true,
+      currentPage: 1,
+      itemCount: 20,
+      itemTotal: 200,
+      itemPerPage: 20,
+    );
+
+    animePaginationEntity = AnimePaginationEntity(
+      pagination: paginationEntity!,
+      animeList: [
+        entity!,
+      ],
+    );
+  });
+
+  test(
+    'should GET anime pagination entity from the repository',
+    () async {
+      when(mockRepo!.getTopAnime(page: 1))
+          .thenAnswer((_) async => Right(animePaginationEntity!));
+
+      final testResult = await usecase!(1);
+      testResult.fold((l) => null, (r) {
+        //check id
+        expect(entity!.title, r.animeList.first.title);
+      });
+      //check response
+      expect(
+        testResult,
+        Right(animePaginationEntity),
+      );
+    },
+  );
+}
