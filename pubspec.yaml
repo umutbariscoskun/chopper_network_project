@@ -23,6 +23,9 @@ dependencies:
   auto_route: ^5.0.4
   flash: ^3.0.5
   flutter_screenutil: ^5.7.0
+  gap: ^2.0.0
+  cached_network_image: ^3.2.3
+  path_provider: ^2.0.15
 
 
 

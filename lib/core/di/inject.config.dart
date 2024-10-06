@@ -10,7 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:chopper/chopper.dart' as _i5;
-import 'package:chopper_network/core/di/inject.dart' as _i11;
+import 'package:chopper_network/core/di/inject.dart' as _i13;
 import 'package:chopper_network/core/routers/app_router.dart' as _i4;
 import 'package:chopper_network/features/app/data/repository/anime_repository_impl.dart'
     as _i7;
@@ -22,8 +22,12 @@ import 'package:chopper_network/features/app/domain/use_case/get_characters_use_
     as _i8;
 import 'package:chopper_network/features/app/domain/use_case/get_top_anime_use_case.dart'
     as _i9;
-import 'package:chopper_network/features/app/presentation/counter/cubit/counter_cubit.dart'
+import 'package:chopper_network/features/app/presentation/anime_detail/cubit/anime_detail_cubit.dart'
     as _i10;
+import 'package:chopper_network/features/app/presentation/anime_list/cubit/anime_list_cubit.dart'
+    as _i11;
+import 'package:chopper_network/features/app/presentation/counter/cubit/counter_cubit.dart'
+    as _i12;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -48,7 +52,17 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i8.GetCharactersUseCase(gh<_i6.AnimeRepository>()));
     gh.factory<_i9.GetTopAnimeUseCase>(
         () => _i9.GetTopAnimeUseCase(gh<_i6.AnimeRepository>()));
-    gh.factory<_i10.CounterCubit>(() => _i10.CounterCubit(
+    gh.factoryParam<_i10.AnimeDetailCubit, int, dynamic>((
+      animeId,
+      _,
+    ) =>
+        _i10.AnimeDetailCubit(
+          gh<_i8.GetCharactersUseCase>(),
+          animeId: animeId,
+        ));
+    gh.factory<_i11.AnimeListCubit>(
+        () => _i11.AnimeListCubit(gh<_i9.GetTopAnimeUseCase>()));
+    gh.factory<_i12.CounterCubit>(() => _i12.CounterCubit(
           gh<_i9.GetTopAnimeUseCase>(),
           gh<_i8.GetCharactersUseCase>(),
         ));
@@ -56,4 +70,4 @@ extension GetItInjectableX on _i1.GetIt {
   }
 }
 
-class _$RegisterModule extends _i11.RegisterModule {}
+class _$RegisterModule extends _i13.RegisterModule {}

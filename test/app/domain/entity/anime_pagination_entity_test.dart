@@ -3,9 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   final entity = AnimeEntity(
+    episodes: 20,
+    id: 1,
     imageUrl: 'test.jpg',
     title: 'title',
     score: 4,
+    synopsis: '',
+    genres: [],
   );
   final paginationEntity = PaginationEntity(
     lastVisiblePage: 10,

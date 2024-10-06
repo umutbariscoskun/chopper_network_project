@@ -114,6 +114,19 @@ class AnimeRepositoryImpl implements AnimeRepository {
           animeList: animeResponse.data
               .map(
                 (animeModel) => AnimeEntity(
+                  episodes: animeModel.episodes,
+                  id: animeModel.id,
+                  synopsis: animeModel.synopsis,
+                  genres: animeModel.genres
+                      .map(
+                        (genre) => GenresEntity(
+                          malId: genre.malId,
+                          type: genre.type,
+                          name: genre.name,
+                          url: genre.url,
+                        ),
+                      )
+                      .toList(),
                   imageUrl: animeModel.imageUrl,
                   title: animeModel.title,
                   score: animeModel.score,
