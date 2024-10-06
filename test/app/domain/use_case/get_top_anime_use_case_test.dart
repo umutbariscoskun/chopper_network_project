@@ -19,9 +19,13 @@ void main() {
     usecase = GetTopAnimeUseCase(mockRepo!);
 
     entity = AnimeEntity(
+      id: 1,
+      episodes: 20,
       imageUrl: 'test.jpg',
       title: 'title',
       score: 4,
+      synopsis: '',
+      genres: [],
     );
     paginationEntity = PaginationEntity(
       lastVisiblePage: 10,

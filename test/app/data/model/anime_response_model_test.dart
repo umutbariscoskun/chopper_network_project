@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:chopper_network/features/app/data/model/anime_response_model.dart';
+import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../helper/test_helper.dart';
@@ -47,6 +48,8 @@ void main() {
       expect(animeResponse.data.first.imageUrl, isA<String>());
       expect(animeResponse.data.first.title, isA<String>());
       expect(animeResponse.data.first.score, isA<double>());
+      expect(animeResponse.data.first.synopsis, isA<String>());
+      expect(animeResponse.data.first.genres, isA<List>());
     });
 
     test('should handle empty data list', () {
@@ -83,7 +86,9 @@ void main() {
               'jpg': {'image_url': 123}
             },
             'title': 123,
-            'score': 'invalid'
+            'score': 'invalid',
+            'synopsis': 123,
+            'genres': 'invalid'
           }
         ]
       };
@@ -101,8 +106,12 @@ void main() {
         'images': {
           'jpg': {'image_url': 'https://example.com/image.jpg'}
         },
+        'mal_id': 1,
+        'episodes': 20,
         'title': 'Test Anime',
-        'score': 8.5
+        'score': 8.5,
+        'synopsis': 'This is a test synopsis',
+        'genres': []
       };
 
       final animeModel = AnimeModel.fromJson(json);
@@ -110,6 +119,8 @@ void main() {
       expect(animeModel.imageUrl, equals('https://example.com/image.jpg'));
       expect(animeModel.title, equals('Test Anime'));
       expect(animeModel.score, equals(8.5));
+      expect(animeModel.synopsis, equals('This is a test synopsis'));
+      expect(animeModel.genres, isEmpty);
     });
 
     test('should handle integer scores', () {
@@ -117,14 +128,53 @@ void main() {
         'images': {
           'jpg': {'image_url': 'https://example.com/image.jpg'}
         },
+        'mal_id': 1,
+        'episodes': 20,
         'title': 'Test Anime',
-        'score': 8
+        'score': 8,
+        'synopsis': 'This is a test synopsis',
+        'genres': []
       };
 
       final animeModel = AnimeModel.fromJson(json);
 
       expect(animeModel.score, equals(8.0));
       expect(animeModel.score, isA<double>());
+    });
+
+    test('should handle non-empty genres list', () {
+      final json = {
+        'images': {
+          'jpg': {'image_url': 'https://example.com/image.jpg'}
+        },
+        'mal_id': 1,
+        'episodes': 20,
+        'title': 'Test Anime',
+        'score': 8.5,
+        'synopsis': 'This is a test synopsis',
+        'genres': [
+          {
+            'mal_id': 1,
+            'type': 'anime',
+            'name': 'Action',
+            'url': 'https://myanimelist.net/anime/genre/1/Action'
+          },
+          {
+            'mal_id': 2,
+            'type': 'anime',
+            'name': 'Adventure',
+            'url': 'https://myanimelist.net/anime/genre/2/Adventure'
+          }
+        ]
+      };
+
+      final animeModel = AnimeModel.fromJson(json);
+
+      expect(animeModel.genres, isNotEmpty);
+      expect(animeModel.genres.length, equals(2));
+      expect(animeModel.genres.first, isA<GenresModel>());
+      expect(animeModel.genres.first.name, equals('Action'));
+      expect(animeModel.genres.last.name, equals('Adventure'));
     });
   });
 }

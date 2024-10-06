@@ -1,12 +1,20 @@
 class AnimeEntity {
   AnimeEntity({
+    required this.synopsis,
     required this.imageUrl,
     required this.title,
     required this.score,
+    required this.genres,
+    required this.episodes,
+    required this.id,
   });
 
+  final int id;
+  final int? episodes;
   final String imageUrl;
   final String title;
+  final String synopsis;
+  final List<GenresEntity> genres;
   final double score;
 }
 
@@ -36,4 +44,18 @@ class AnimePaginationEntity {
 
   final PaginationEntity pagination;
   final List<AnimeEntity> animeList;
+}
+
+class GenresEntity {
+  GenresEntity({
+    required this.malId,
+    required this.type,
+    required this.name,
+    required this.url,
+  });
+
+  final int malId;
+  final String type;
+  final String name;
+  final String url;
 }

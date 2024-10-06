@@ -48,7 +48,8 @@
             "favorites": 53440,
             "synopsis": "During their decade-long quest to defeat the Demon King, the members of the hero's party forge bonds through adventures and battles...",
             "season": "fall",
-            "year": 2023
+            "year": 2023,
+            "genres": []
         },
         {
             "mal_id": 5114,
@@ -88,7 +89,8 @@
             "favorites": 228546,
             "synopsis": "After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality...",
             "season": "spring",
-            "year": 2009
+            "year": 2009,
+            "genres": []
         },
         {
             "mal_id": 9253,
@@ -128,7 +130,8 @@
             "favorites": 191506,
             "synopsis": "Eccentric scientist Rintarou Okabe has a never-ending thirst for scientific exploration. Together with his ditzy but well-meaning friend Mayuri Shiina...",
             "season": "spring",
-            "year": 2011
+            "year": 2011,
+            "genres": []
         },
         {
             "mal_id": 28977,
@@ -168,7 +171,8 @@
             "favorites": 16176,
             "synopsis": "Gintoki, Shinpachi, and Kagura return as the fun-loving but broke members of the Yorozuya team! Living in an alternate-reality Edo...",
             "season": "spring",
-            "year": 2015
+            "year": 2015,
+            "genres": []
         },
         {
             "mal_id": 41467,
@@ -208,7 +212,8 @@
             "favorites": 28440,
             "synopsis": "Substitute Soul Reaper Ichigo Kurosaki spends his days fighting against Hollows, dangerous evil spirits that threaten Karakura Town...",
             "season": "fall",
-            "year": 2022
+            "year": 2022,
+            "genres": []
         }
     ]
 }
