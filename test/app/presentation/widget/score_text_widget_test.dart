@@ -1,8 +1,8 @@
+import 'package:chopper_network/features/app/presentation/theme/text_styles.dart';
 import 'package:chopper_network/features/app/presentation/widget/score_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:chopper_network/features/app/presentation/theme/text_styles.dart';
 
 void main() {
   testWidgets('ScoreTextWidget displays rounded score with proper formatting',

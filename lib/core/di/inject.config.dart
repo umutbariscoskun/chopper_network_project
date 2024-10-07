@@ -10,7 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:chopper/chopper.dart' as _i5;
-import 'package:chopper_network/core/di/inject.dart' as _i13;
+import 'package:chopper_network/core/di/inject.dart' as _i12;
 import 'package:chopper_network/core/routers/app_router.dart' as _i4;
 import 'package:chopper_network/features/app/data/repository/anime_repository_impl.dart'
     as _i7;
@@ -26,8 +26,6 @@ import 'package:chopper_network/features/app/presentation/anime_detail/cubit/ani
     as _i10;
 import 'package:chopper_network/features/app/presentation/anime_list/cubit/anime_list_cubit.dart'
     as _i11;
-import 'package:chopper_network/features/app/presentation/counter/cubit/counter_cubit.dart'
-    as _i12;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -62,12 +60,8 @@ extension GetItInjectableX on _i1.GetIt {
         ));
     gh.factory<_i11.AnimeListCubit>(
         () => _i11.AnimeListCubit(gh<_i9.GetTopAnimeUseCase>()));
-    gh.factory<_i12.CounterCubit>(() => _i12.CounterCubit(
-          gh<_i9.GetTopAnimeUseCase>(),
-          gh<_i8.GetCharactersUseCase>(),
-        ));
     return this;
   }
 }
 
-class _$RegisterModule extends _i13.RegisterModule {}
+class _$RegisterModule extends _i12.RegisterModule {}

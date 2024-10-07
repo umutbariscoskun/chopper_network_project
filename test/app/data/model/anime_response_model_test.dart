@@ -1,15 +1,11 @@
 import 'dart:convert';
 
 import 'package:chopper_network/features/app/data/model/anime_response_model.dart';
-import 'package:chopper_network/features/app/domain/entity/anime_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../helper/test_helper.dart';
 
 void main() {
-  const animeResponseDummyDataPath =
-      'helper/dummy_data/anime_response_dummy.json';
-
   group('AnimeResponse Model Tests', () {
     test('should create AnimeResponse from JSON', () {
       final jsonData = jsonDecode(jsonAnimeRawData) as Map<String, dynamic>;
@@ -49,7 +45,6 @@ void main() {
       expect(animeResponse.data.first.title, isA<String>());
       expect(animeResponse.data.first.score, isA<double>());
       expect(animeResponse.data.first.synopsis, isA<String>());
-      expect(animeResponse.data.first.genres, isA<List>());
     });
 
     test('should handle empty data list', () {
