@@ -39,6 +39,8 @@ class AnimeListBuilder extends BaseWidget<AnimeListCubit, AnimeListState> {
                       height: constraints.maxHeight * 0.85,
                       child: BlurContainer(
                         child: AnimeCard(
+                          onCardPressed: () =>
+                              appRouter.push(AnimeDetailRoute(anime: item)),
                           item: item,
                         ),
                       ),

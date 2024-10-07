@@ -2,15 +2,17 @@ part of '../anime_list_view.dart';
 
 class AnimeCard extends StatelessWidget {
   const AnimeCard({
+    required this.onCardPressed,
     required this.item,
     super.key,
   });
   final AnimeEntity item;
+  final VoidCallback? onCardPressed;
 
   @override
   Widget build(BuildContext context) {
     return CustomAnimatedButton(
-      onPressed: () => appRouter.push(AnimeDetailRoute(anime: item)),
+      onPressed: onCardPressed,
       child: Container(
         padding: EdgeInsets.all(16.r),
         child: Column(
@@ -19,7 +21,7 @@ class AnimeCard extends StatelessWidget {
           children: [
             RadiusedCachedImageWidget(
               imageUrl: item.imageUrl,
-              height: 550.h,
+              height: 520.h,
             ),
             const Spacer(),
             TitleTextWidget(

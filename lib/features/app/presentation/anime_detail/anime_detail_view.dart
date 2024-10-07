@@ -42,6 +42,7 @@ class AnimeDetailView extends BaseView<AnimeDetailCubit, AnimeDetailState> {
           children: [
             Gap(context.topPadding + 20.h),
             DetailPageAppBar(
+              onBackIconPressed: appRouter.pop,
               title: anime.title,
             ),
             Padding(
