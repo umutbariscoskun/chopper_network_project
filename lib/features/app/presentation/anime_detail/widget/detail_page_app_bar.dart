@@ -3,15 +3,16 @@ part of '../anime_detail_view.dart';
 class DetailPageAppBar extends StatelessWidget {
   const DetailPageAppBar({
     required this.title,
+    required this.onBackIconPressed,
     super.key,
   });
 
   final String title;
-
+  final VoidCallback? onBackIconPressed;
   @override
   Widget build(BuildContext context) {
     return CustomAnimatedButton(
-      onPressed: appRouter.pop,
+      onPressed: onBackIconPressed,
       child: Row(
         children: [
           Icon(

@@ -12,7 +12,7 @@ class ScoreTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '$score/10',
+      '${score.round()}/10',
       style: AppTextStyles.labelSmall,
     );
   }
