@@ -15,16 +15,37 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   chopper: ^6.0.0
+  dartz: ^0.10.1
+  flutter_dotenv: ^5.1.0
+  #Dependency Injection
+  get_it: ^7.2.0
+  injectable: ^2.1.2
+  auto_route: ^5.0.4
+  flash: ^3.0.5
+  flutter_screenutil: ^5.7.0
+  gap: ^2.0.0
+  cached_network_image: ^3.2.3
+  path_provider: ^2.0.15
+
+
 
 
 dev_dependencies:
   bloc_test: ^9.1.1
   flutter_test:
     sdk: flutter
-  mocktail: ^0.3.0
+  mockito: ^5.3.2
+  mock_web_server: ^5.0.0-nullsafety.1
+
   very_good_analysis: ^4.0.0
   chopper_generator: ^6.0.0
+  injectable_generator: ^2.1.6
+  auto_route_generator: ^5.0.3
+  build_runner: ^2.3.3
+
 
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - .env

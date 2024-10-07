@@ -12,6 +12,15 @@ A Very Good Project created by Very Good CLI.
 
 ## Getting Started 🚀
 
+### ARCHITECTURE: 
+
+- Clean Architecture
+
+![image](https://github.com/umutbariscoskun/ApiCrudAPP/assets/45595606/9e8d7eec-8de0-416f-ad1b-eee5a4561a61)
+
+
+[You can find more about this architecture in my article.](https://medium.com/@umutbariscoskun/flutter-clean-architecture-paketi-ve-mimari-kullan%C4%B1m%C4%B1-beae4d09e0c3)
+
 This project contains 3 flavors:
 
 - development
@@ -22,13 +31,13 @@ To run the desired flavor either use the launch configuration in VSCode/Android 
 
 ```sh
 # Development
-$ flutter run --flavor development --target lib/main_development.dart
+$ flutter run --flavor development --target lib/main.dart
 
 # Staging
-$ flutter run --flavor staging --target lib/main_staging.dart
+$ flutter run --flavor staging --target lib/main.dart
 
 # Production
-$ flutter run --flavor production --target lib/main_production.dart
+$ flutter run --flavor production --target lib/main.dart
 ```
 
 _\*Chopper Network works on iOS, Android, Web, and Windows._
