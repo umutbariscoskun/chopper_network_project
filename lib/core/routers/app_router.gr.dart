@@ -25,12 +25,6 @@ class _$AppRouter extends RootStackRouter {
         child: AnimeListView(key: args.key),
       );
     },
-    CounterRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const CounterView(),
-      );
-    },
     AnimeDetailRoute.name: (routeData) {
       final args = routeData.argsAs<AnimeDetailRouteArgs>();
       return MaterialPageX<dynamic>(
@@ -48,10 +42,6 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           AnimeListRoute.name,
           path: '/',
-        ),
-        RouteConfig(
-          CounterRoute.name,
-          path: '/counter-view',
         ),
         RouteConfig(
           AnimeDetailRoute.name,
@@ -82,18 +72,6 @@ class AnimeListRouteArgs {
   String toString() {
     return 'AnimeListRouteArgs{key: $key}';
   }
-}
-
-/// generated route for
-/// [CounterView]
-class CounterRoute extends PageRouteInfo<void> {
-  const CounterRoute()
-      : super(
-          CounterRoute.name,
-          path: '/counter-view',
-        );
-
-  static const String name = 'CounterRoute';
 }
 
 /// generated route for

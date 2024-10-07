@@ -3,11 +3,21 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
 import 'package:chopper/chopper.dart' as _i2;
+import 'package:chopper_network/core/error/failure.dart' as _i7;
 import 'package:chopper_network/features/app/data/service/anime_service.dart'
-    as _i3;
+    as _i4;
+import 'package:chopper_network/features/app/domain/entity/anime_entity.dart'
+    as _i10;
+import 'package:chopper_network/features/app/domain/entity/character_entity.dart'
+    as _i8;
+import 'package:chopper_network/features/app/domain/use_case/get_characters_use_case.dart'
+    as _i6;
+import 'package:chopper_network/features/app/domain/use_case/get_top_anime_use_case.dart'
+    as _i9;
+import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -52,10 +62,20 @@ class _FakeResponse_2<BodyType> extends _i1.SmartFake
         );
 }
 
+class _FakeEither_3<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
+  _FakeEither_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [AnimeService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
+class MockAnimeService extends _i1.Mock implements _i4.AnimeService {
   MockAnimeService() {
     _i1.throwOnMissingStub(this);
   }
@@ -88,7 +108,7 @@ class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
       ) as Type);
 
   @override
-  _i4.Future<_i2.Response<dynamic>> getCharacters({required int? id}) =>
+  _i5.Future<_i2.Response<dynamic>> getCharacters({required int? id}) =>
       (super.noSuchMethod(
         Invocation.method(
           #getCharacters,
@@ -96,7 +116,7 @@ class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
           {#id: id},
         ),
         returnValue:
-            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i5.Future<_i2.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
           this,
           Invocation.method(
             #getCharacters,
@@ -104,10 +124,10 @@ class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
             {#id: id},
           ),
         )),
-      ) as _i4.Future<_i2.Response<dynamic>>);
+      ) as _i5.Future<_i2.Response<dynamic>>);
 
   @override
-  _i4.Future<_i2.Response<dynamic>> getTopAnime({
+  _i5.Future<_i2.Response<dynamic>> getTopAnime({
     required int? page,
     int? limit = 20,
   }) =>
@@ -121,7 +141,7 @@ class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
           },
         ),
         returnValue:
-            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i5.Future<_i2.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
           this,
           Invocation.method(
             #getTopAnime,
@@ -132,5 +152,63 @@ class MockAnimeService extends _i1.Mock implements _i3.AnimeService {
             },
           ),
         )),
-      ) as _i4.Future<_i2.Response<dynamic>>);
+      ) as _i5.Future<_i2.Response<dynamic>>);
+}
+
+/// A class which mocks [GetCharactersUseCase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetCharactersUseCase extends _i1.Mock
+    implements _i6.GetCharactersUseCase {
+  MockGetCharactersUseCase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i3.Either<_i7.Failure, List<_i8.CharacterEntity>>> call(
+          int? param) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [param],
+        ),
+        returnValue: _i5.Future<
+                _i3.Either<_i7.Failure, List<_i8.CharacterEntity>>>.value(
+            _FakeEither_3<_i7.Failure, List<_i8.CharacterEntity>>(
+          this,
+          Invocation.method(
+            #call,
+            [param],
+          ),
+        )),
+      ) as _i5.Future<_i3.Either<_i7.Failure, List<_i8.CharacterEntity>>>);
+}
+
+/// A class which mocks [GetTopAnimeUseCase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetTopAnimeUseCase extends _i1.Mock
+    implements _i9.GetTopAnimeUseCase {
+  MockGetTopAnimeUseCase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i3.Either<_i7.Failure, _i10.AnimePaginationEntity>> call(
+          int? param) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [param],
+        ),
+        returnValue: _i5.Future<
+                _i3.Either<_i7.Failure, _i10.AnimePaginationEntity>>.value(
+            _FakeEither_3<_i7.Failure, _i10.AnimePaginationEntity>(
+          this,
+          Invocation.method(
+            #call,
+            [param],
+          ),
+        )),
+      ) as _i5.Future<_i3.Either<_i7.Failure, _i10.AnimePaginationEntity>>);
 }
