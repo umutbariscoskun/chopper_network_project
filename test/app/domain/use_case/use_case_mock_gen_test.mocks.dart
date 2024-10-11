@@ -12,6 +12,8 @@ import 'package:chopper_network/features/app/domain/entity/character_entity.dart
     as _i6;
 import 'package:chopper_network/features/app/domain/repository/anime_repository.dart'
     as _i3;
+import 'package:chopper_network/features/app/domain/repository/native_repository.dart'
+    as _i8;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -87,6 +89,32 @@ class MockAnimeRepository extends _i1.Mock implements _i3.AnimeRepository {
       ) as _i4.Future<_i2.Either<_i5.Failure, _i7.AnimePaginationEntity>>);
 }
 
+/// A class which mocks [NativeRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockNativeRepository extends _i1.Mock implements _i8.NativeRepository {
+  MockNativeRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, bool>> getNetworkStatus() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getNetworkStatus,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #getNetworkStatus,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
+}
+
 /// A class which mocks [AnimeRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -136,4 +164,30 @@ class FakeRepo extends _i1.Mock implements _i3.AnimeRepository {
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i7.AnimePaginationEntity>>);
+}
+
+/// A class which mocks [NativeRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class FakeNativeRepo extends _i1.Mock implements _i8.NativeRepository {
+  FakeNativeRepo() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, bool>> getNetworkStatus() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getNetworkStatus,
+          [],
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, bool>>.value(
+            _FakeEither_0<_i5.Failure, bool>(
+          this,
+          Invocation.method(
+            #getNetworkStatus,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, bool>>);
 }
