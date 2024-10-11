@@ -59,7 +59,9 @@ class AnimeListCubit extends BaseCubit<AnimeListState> {
 
     if (result != null) {
       _list.addAll(result.animeList);
-
+      if (!result.pagination.hasNextPage) {
+        isLastPage = true;
+      }
       emit(AnimeListLoaded([..._list]));
     }
   }

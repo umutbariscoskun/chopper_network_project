@@ -12,8 +12,6 @@ part 'app_router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(page: AnimeListView, initial: true),
     AutoRoute(page: AnimeDetailView),
-
-    // Diğer rotalarınızı buraya ekleyin
   ],
 )
 @lazySingleton
